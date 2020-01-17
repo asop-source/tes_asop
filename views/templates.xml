@@ -1,0 +1,99 @@
+<odoo>
+    <data>
+
+        <record id="view_componest_tree" model="ir.ui.view">
+            <field name="name">components.tree</field>
+            <field name="model">components</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Nama Components">
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </tree>
+            </field> 
+        </record>
+
+
+        <record id="view_components_form" model="ir.ui.view">
+            <field name="name">components.form</field>
+            <field name="model">components</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Components Form">
+
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Course Name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_items_tree" model="ir.ui.view">
+            <field name="name">items.tree</field>
+            <field name="model">items</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">     
+                <tree string="Nama items">
+                    <field name="name"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </tree>
+            </field> 
+        </record>
+
+
+        <record id="view_items_form" model="ir.ui.view">
+            <field name="name">items.form</field>
+            <field name="model">items</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="items Form">
+                    <header>
+                        <button string="Export Excel" name="export_excel" type="object"  class="btn-primary" icon="fa-table"/>
+                     </header>  
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="Course Name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+
+                        <notebook>
+                            <page string="Nama Components">
+                                <field name="components_ids">
+                                    <tree string="Components">
+                                        <field name="name"/>
+                                        <field name="date_start"/>
+                                        <field name="date_end"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+         <record id="action_components" model="ir.actions.act_window">
+          <field name="name">Create Components</field>
+          <field name="res_model">components</field>
+          <field name="view_mode">tree,form</field>
+          <field name="help" type="html">
+                  <p class="oe_view_nocontent_create">
+                    Click to add a Components
+                  </p>
+                     <p>Click Add Components</p>
+          </field>
+        </record>
+
+        <record id="action_items" model="ir.actions.act_window">
+          <field name="name">Create Items</field>
+          <field name="res_model">items</field>
+          <field name="view_mode">tree,form</field>
+          <field name="help" type="html">
+                  <p class="oe_view_nocontent_create">
+                    Click to add a Components
+                  </p>
+                    <p>Click Add Components</p>
+          </field>
+        </record>
+
+
+
+    <menuitem 
+            name="Data"
+            id="data_1"
+            web_icon="tes_asop,static/description/icon.png"
+            />
+
+    <menuitem 
+            name="Components"
+            id="components_1"
+            parent = "data_1"
+            sequence = "1"
+            action="action_components"
+            />
+    <menuitem 
+            name="Items"
+            id="items_1"
+            parent = "data_1"
+            sequence = "1"
+            action="action_items"
+            />
+  </data>
+</odoo>
